@@ -8,11 +8,32 @@ chessApp.config(['$routeProvider', '$locationProvider',
 
         $routeProvider
             .when('/homepage', {
+                templateUrl: 'main-page/main.html',
+                controller: "AppCtrl"
+            })
+            .when('/game', {
                 templateUrl: 'game-page/game-page.html',
+                controller: "GameCtrl"
+            })
+            .when('/register', {
+                templateUrl: 'register-page/register.html',
+                controller: "RegisterCtrl"
+            })
+            .when('/login', {
+                templateUrl: 'login-page/login.html',
+                controller: "LoginCtrl"
+            })
+            .when('/rules', {
+                templateUrl: 'rules-page/rules.html',
+                controller: "RulesCtrl"
+            })
+            .when('/', {
+                templateUrl: 'main-page/main.html',
                 controller: "AppCtrl"
             })
             .otherwise(
             {
-                controller: "AppCtrl"
+                templateUrl: '404-page/404-page.html'
+                //controller: "AppCtrl"
             });
     }]);
