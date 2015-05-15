@@ -32,3 +32,5 @@ f987fe,127.0.0.1,GET,http://localhost:8000/_configurator/final,1431597389,
 e632b3,127.0.0.1,GET,http://localhost:8000/,1431597394,
 d20ca2,127.0.0.1,GET,http://localhost:8000/homepage,1431610803,2ad94b
 2ad94b,127.0.0.1,GET,http://localhost:8000/homepage,1431610804,
+782879,127.0.0.1,GET,http://localhost:8000/frontend/,1431620836,414fe5
+414fe5,127.0.0.1,GET,http://localhost:8000/frontend/,1431620836,

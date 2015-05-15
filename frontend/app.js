@@ -1,6 +1,6 @@
 'use strict';
 
-var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'nywton.chessboard']);
+var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'nywton.chessboard', 'nywton.chess']);
 
 chessApp.controller('AppCtrl', ['$scope', function ($scope) {
 
@@ -8,7 +8,7 @@ chessApp.controller('AppCtrl', ['$scope', function ($scope) {
 
 chessApp.config(['nywtonChessboardConfigProvider', function nywtonChessConfigConfig(chessboardProvider) {
     chessboardProvider.pieceTheme('../bower_components/chessboard.js/img/chesspieces/wikipedia/{piece}.png');
-}])
+}]);
 
 
 chessApp.directive('chessgameDebug', [function () {

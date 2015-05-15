@@ -20,16 +20,14 @@
     <link rel="stylesheet" href="../../../frontend/css/templatemo_misc.css">
     <link rel="stylesheet" href="../../../frontend/css/templatemo_style.css">
     <link rel="stylesheet" href="../../../bower_components/chessboard.js/css/chessboard.min.css">
-    <link rel="stylesheet" href="../../../frontend/css/main.css">
-    <link rel="stylesheet" href="../../../frontend/my-css/my-css.css">
 
     <script src="../../../frontend/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <script src="../../../bower_components/angular/angular.min.js"></script>
     <script src="../../../bower_components/angular-route/angular-route.min.js"></script>
     <script src="../../../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="../../../bower_components/chessboard.js/js/chessboard.min.js"></script>
     <script src="../../../bower_components/chess.js/chess.min.js"></script>
+    <script src="../../../bower_components/chessboard.js/js/chessboard.min.js"></script>
     <script src="../../../bower_components/angular-chessboard/angular-chessboard.min.js"></script>
     <script src="../../../bower_components/angular-chess/angular-chess.min.js"></script>
 
@@ -85,11 +83,10 @@
 </div> <!-- /.site-slider -->
 <div class="container">
     <div class="cf">
+        <h3>allow only legal moves</h3>
         <div class="example board board-sm">
-            <nywton-chessboard board="boardA"  draggable="true" nywton-position-start
-                               nywton-allow-only-legal-moves>
-
-            </nywton-chessboard>
+            <nywton-chessboard data-board="boardA" data-game="gameA" position="'start'" style="width: 100px"
+                               draggable="true" ></nywton-chessboard>
         </div>
     </div>
 </div>
