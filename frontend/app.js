@@ -2,8 +2,9 @@
 
 var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'nywton.chessboard', 'nywton.chess']);
 
-chessApp.controller('AppCtrl', ['$scope', function ($scope) {
-
+chessApp.controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
+    console.log($location.path());
+    console.log();
     }]);
 
 chessApp.config(['nywtonChessboardConfigProvider', function nywtonChessConfigConfig(chessboardProvider) {
