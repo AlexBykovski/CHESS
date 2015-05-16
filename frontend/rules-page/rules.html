@@ -1,27 +1,48 @@
 <div class="dropdown">
     <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false" class="btn btn-success">
-        Правила
+        {{activeItem.label}}
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <li role="presentation"><a role="menuitem">Общие правила</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('general')" style="cursor: pointer">{{dropdownMenu.general.label}}</a></li>
         <li role="presentation" class="divider"></li>
         <li role="presentation" class="dropdown-header">Ходы фигур</li>
         <li role="presentation" class="divider"></li>
-    <li role="presentation"><a role="menuitem">Король</a></li>
-    <li role="presentation"><a role="menuitem">Ферзь</a></li>
-    <li role="presentation"><a role="menuitem">Ладья</a></li>
-    <li role="presentation"><a role="menuitem">Слон</a></li>
-    <li role="presentation"><a role="menuitem">Конь</a></li>
-    <li role="presentation"><a role="menuitem">Пешка</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('king')" style="cursor: pointer">{{dropdownMenu.king.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('queen')" style="cursor: pointer">{{dropdownMenu.queen.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('bishop')" style="cursor: pointer">{{dropdownMenu.bishop.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('rook')" style="cursor: pointer">{{dropdownMenu.rook.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('knight')" style="cursor: pointer">{{dropdownMenu.knight.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('pawn')" style="cursor: pointer">{{dropdownMenu.pawn.label}}</a></li>
         <li role="presentation" class="divider"></li>
         <li role="presentation" class="dropdown-header">Особые действия</li>
         <li role="presentation" class="divider"></li>
-        <li role="presentation"><a role="menuitem">Превращение</a></li>
-        <li role="presentation"><a role="menuitem">Взятие на проходе</a></li>
-        <li role="presentation"><a role="menuitem">Рокировка</a></li>
-        <li role="presentation"><a role="menuitem">Шах и мат</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('transformation')" style="cursor: pointer">{{dropdownMenu.transformation.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('enPassant')" style="cursor: pointer">{{dropdownMenu.enPassant.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('castling')" style="cursor: pointer">{{dropdownMenu.castling.label}}</a></li>
+        <li role="presentation"><a role="menuitem" ng-click="setActiveItem('checkMate')" style="cursor: pointer">{{dropdownMenu.checkMate.label}}</a></li>
 </div>
-<iframe border="0" frameborder="0" allowtransparency="true" width="620" height="410"
-        style="margin-left: 668px; margin-top: 76px;" src="http://www.chess.com/emboard?id=73">
+
+<div ng-show="activeItem.label === 'Общие правила'" ng-include="'/rules-pages/single-pages/general.html'">
+</div>
+<div ng-show="activeItem.label === 'Рокировка'" ng-include="'/rules-pages/single-pages/castling.html'">
+</div>
+<div ng-show="activeItem.label === 'Шах и мат'" ng-include="'/rules-pages/single-pages/check-mate.html'">
+</div>
+<div ng-show="activeItem.label === 'Взятие на проходе'" ng-include="'/rules-pages/single-pages/en-passant.html'">
+</div>
+<div ng-show="activeItem.label === 'Превращение'" ng-include="'/rules-pages/single-pages/transformation.html'">
+</div>
+<div ng-show="activeItem.label === 'Король'" ng-include="'/rules-pages/single-pages/king.html'">
+</div>
+<div ng-show="activeItem.label === 'Ферзь'" ng-include="'/rules-pages/single-pages/queen.html'">
+</div>
+<div ng-show="activeItem.label === 'Ладья'" ng-include="'/rules-pages/single-pages/bishop.html'">
+</div>
+<div ng-show="activeItem.label === 'Конь'" ng-include="'/rules-pages/single-pages/knight.html'">
+</div>
+<div ng-show="activeItem.label === 'Слон'" ng-include="'/rules-pages/single-pages/rook.html'">
+</div>
+<div ng-show="activeItem.label === 'Пешка'" ng-include="'/rules-pages/single-pages/pawn.html'">
+</div>
