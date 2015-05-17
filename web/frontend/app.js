@@ -1,13 +1,12 @@
 'use strict';
 
-var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'nywton.chessboard', 'nywton.chess']);
+var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'ngSanitize', 'nywton.chessboard', 'nywton.chess']);
 
 chessApp.controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
-    console.log("sdfsdf");
     }]);
 
 chessApp.config(['nywtonChessboardConfigProvider', function nywtonChessConfigConfig(chessboardProvider) {
-    chessboardProvider.pieceTheme('../bower_components/chessboard.js/img/chesspieces/wikipedia/{piece}.png');
+    chessboardProvider.pieceTheme('images/chess-imgs/{piece}.png');
 }]);
 
 

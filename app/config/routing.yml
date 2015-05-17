@@ -1,9 +1,29 @@
-homepage:
+mainpage:
     path:      /
     defaults:  { _controller: AppBundle:Default:index }
 
-chesspage:
-    path: /chess
+homepage:
+    path: /homepage
+    defaults:
+      _controller: AppBundle:Default:index
+
+game:
+    path: /game
+    defaults:
+      _controller: AppBundle:Default:index
+
+rules:
+    path: /rules
+    defaults:
+      _controller: AppBundle:Default:index
+
+register:
+    path: /register
+    defaults:
+      _controller: AppBundle:Default:index
+
+login:
+    path: /login
     defaults:
       _controller: AppBundle:Default:index
 

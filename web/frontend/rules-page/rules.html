@@ -23,26 +23,25 @@
         <li role="presentation"><a role="menuitem" ng-click="setActiveItem('castling')" style="cursor: pointer">{{dropdownMenu.castling.label}}</a></li>
         <li role="presentation"><a role="menuitem" ng-click="setActiveItem('checkMate')" style="cursor: pointer">{{dropdownMenu.checkMate.label}}</a></li>
 </div>
-
-<div ng-show="activeItem.label === 'Общие правила'" ng-include="'/rules-pages/single-pages/general.html'">
+<div ng-show="activeItem.label === 'Общие правила'" ng-include="'frontend/single-rules-pages/general.html'">
 </div>
-<div ng-show="activeItem.label === 'Рокировка'" ng-include="'/rules-pages/single-pages/castling.html'">
+<div ng-show="activeItem.label === 'Рокировка'" ng-include="'frontend/single-rules-pages/castling.html'">
 </div>
-<div ng-show="activeItem.label === 'Шах и мат'" ng-include="'/rules-pages/single-pages/check-mate.html'">
+<div ng-show="activeItem.label === 'Шах и мат'" ng-include="'frontend/single-rules-pages/check-mate.html'">
 </div>
-<div ng-show="activeItem.label === 'Взятие на проходе'" ng-include="'/rules-pages/single-pages/en-passant.html'">
+<div ng-show="activeItem.label === 'Взятие на проходе'" ng-include="'frontend/single-rules-pages/en-passant.html'">
 </div>
-<div ng-show="activeItem.label === 'Превращение'" ng-include="'/rules-pages/single-pages/transformation.html'">
+<div ng-show="activeItem.label === 'Превращение'" ng-include="'frontend/single-rules-pages/transformation.html'">
 </div>
-<div ng-show="activeItem.label === 'Король'" ng-include="'/rules-pages/single-pages/king.html'">
+<div ng-show="activeItem.label === 'Король'" ng-include="'frontend/single-rules-pages/king.html'">
 </div>
-<div ng-show="activeItem.label === 'Ферзь'" ng-include="'/rules-pages/single-pages/queen.html'">
+<div ng-show="activeItem.label === 'Ферзь'" ng-include="'frontend/single-rules-pages/queen.html'">
 </div>
-<div ng-show="activeItem.label === 'Ладья'" ng-include="'/rules-pages/single-pages/bishop.html'">
+<div ng-show="activeItem.label === 'Ладья'" ng-include="'frontend/single-rules-pages/bishop.html'">
 </div>
-<div ng-show="activeItem.label === 'Конь'" ng-include="'/rules-pages/single-pages/knight.html'">
+<div ng-show="activeItem.label === 'Конь'" ng-include="'frontend/single-rules-pages/knight.html'">
 </div>
-<div ng-show="activeItem.label === 'Слон'" ng-include="'/rules-pages/single-pages/rook.html'">
+<div ng-show="activeItem.label === 'Слон'" ng-include="'frontend/single-rules-pages/rook.html'">
 </div>
-<div ng-show="activeItem.label === 'Пешка'" ng-include="'/rules-pages/single-pages/pawn.html'">
+<div ng-show="activeItem.label === 'Пешка'" ng-include="'frontend/single-rules-pages/pawn.html'">
 </div>
