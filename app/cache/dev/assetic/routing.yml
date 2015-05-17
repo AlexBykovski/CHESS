@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /home/alex/PhpstormProjects/CHESS/myproject/app/config/routing_dev.yml
