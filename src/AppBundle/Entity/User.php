@@ -24,9 +24,30 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255)
+     * @ORM\Column(name="firstName", type="string", length=255)
      */
-    private $username;
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastName", type="string", length=255)
+     */
+    private $lastName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nickName", type="string", length=255)
+     */
+    private $nickName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
 
     /**
      * @var string
@@ -47,26 +68,95 @@ class User
     }
 
     /**
-     * Set username
+     * Set firstName
      *
-     * @param string $username
+     * @param string $firstName
      * @return User
      */
-    public function setUsername($username)
+    public function setFirstName($firstName)
     {
-        $this->username = $username;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get firstName
      *
      * @return string 
      */
-    public function getUsername()
+    public function getFirstName()
     {
-        return $this->username;
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return User
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set nickName
+     *
+     * @param string $nickName
+     * @return User
+     */
+    public function setNickName($nickName)
+    {
+        $this->nickName = $nickName;
+
+        return $this;
+    }
+
+    /**
+     * Get nickName
+     *
+     * @return string
+     */
+    public function getNickName()
+    {
+        return $this->nickName;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**

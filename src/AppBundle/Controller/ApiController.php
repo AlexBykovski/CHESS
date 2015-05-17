@@ -26,9 +26,11 @@ class ApiController extends Controller
     {
         $userData = $request->get('user');
         $user = new User();
-        $user->setUsername($userData['username']);
+        $user->setFirstName($userData['firstName']);
+        $user->setLastName($userData['lastName']);
+        $user->setNickName($userData['nickName']);
+        $user->setPassword($userData['password']);
         $user->setEmail($userData['email']);
-
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($user);
@@ -44,7 +46,10 @@ class ApiController extends Controller
         return array_map(function($user){
             return array(
                 'id' => $user->getId(),
-                'username' => $user->getUsername(),
+                'firstName' => $user->getFirstName(),
+                'lastName' => $user->getLastName(),
+                'nickName' => $user->getNickName(),
+                'password' => $user->getPassword(),
                 'email' => $user->getEmail()
             );
         }, $users);
