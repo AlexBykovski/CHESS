@@ -6,3 +6,15 @@ chesspage:
     path: /chess
     defaults:
       _controller: AppBundle:Default:index
+
+api_user_list:
+    path: /api/user/list
+    defaults:
+      _controller: AppBundle:Api:userList
+    methods:  [GET]
+
+api_user_create:
+    path: /api/user/create
+    defaults:
+      _controller: AppBundle:Api:userCreate
+    methods:  [POST]
