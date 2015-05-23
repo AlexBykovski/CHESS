@@ -24,8 +24,7 @@ class ApiController extends Controller
      */
     public function userCreateAction(Request $request)
     {
-        $userData = $request->get('user');
-        var_dump($userData); die;
+        $userData = $this->getRequestPayloadParam('user');
         $user = new User();
         $user->setFirstName($userData['firstName']);
         $user->setLastName($userData['lastName']);
@@ -40,6 +39,18 @@ class ApiController extends Controller
         return new JsonResponse(array(
             'id' => $user->getId()
         ));
+    }
+
+    private function getRequestPayloadParam($param)
+    {
+        $params = array();
+        $content = $this->get("request")->getContent();
+        if (!empty($content))
+        {
+            $params = json_decode($content, true);
+        }
+
+        return array_key_exists($param, $params) ? $params[$param] : null;
     }
 
     private function usersToJson(array $users)
