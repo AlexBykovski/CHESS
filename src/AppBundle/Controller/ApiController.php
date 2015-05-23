@@ -25,6 +25,7 @@ class ApiController extends Controller
     public function userCreateAction(Request $request)
     {
         $userData = $request->get('user');
+        var_dump($userData); die;
         $user = new User();
         $user->setFirstName($userData['firstName']);
         $user->setLastName($userData['lastName']);
