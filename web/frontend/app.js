@@ -3,6 +3,7 @@
 var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'ngSanitize', 'nywton.chessboard', 'nywton.chess']);
 
 chessApp.controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
+    window.isIIStep = false;
     }]);
 
 chessApp.config(['nywtonChessboardConfigProvider', function nywtonChessConfigConfig(chessboardProvider) {

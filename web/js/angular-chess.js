@@ -49,15 +49,19 @@
     };
     
     this.makeRandomMove = function (game, board) {
-      $log.info('position: ' + game.fen());
-      var moves = game.moves();
-      var move = moves[Math.floor(Math.random() * moves.length)];
-      game.move(move);
-      
-      var useAnimations = true;
-      board.position(game.fen(), useAnimations);
-      $log.info('move: ' + move);
-    };
+        if (window.isIIStep) {
+            console.log(1111111111);
+            $log.info('position: ' + game.fen());
+            var moves = game.moves();
+            var move = moves[Math.floor(Math.random() * moves.length)];
+            //console.log(move);
+            game.move(move);
+            var useAnimations = true;
+            board.position(game.fen(), useAnimations);
+            $log.info('move: ' + move);
+            window.isIIStep = false;
+        };
+    }
   }])
 
   .directive('nywtonChessgame', ['$window','$log', 'NywtonChessGameService', function($window, $log, ChessGameService) {
@@ -150,7 +154,7 @@
       require: 'nywtonChessgame',
       controller: ['$scope', function randomVsRandom($scope) {
         var _MIN_INTERVAL = 100;
-        var interval = 1000;
+        var interval = 5000;
         var timeoutPromise = null;
         
         this.setInterval = function getIntervalF(t) {
