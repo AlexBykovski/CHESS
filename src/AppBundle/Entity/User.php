@@ -56,6 +56,13 @@ class User
      */
     private $email;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="elo", type="integer")
+     */
+    private $elo;
+
 
     /**
      * Get id
@@ -180,5 +187,28 @@ class User
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set elo
+     *
+     * @param \number $elo
+     * @return User
+     */
+    public function setElo($elo)
+    {
+        $this->elo = $elo;
+
+        return $this;
+    }
+
+    /**
+     * Get elo
+     *
+     * @return \number 
+     */
+    public function getElo()
+    {
+        return $this->elo;
     }
 }
