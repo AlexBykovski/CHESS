@@ -2,8 +2,14 @@
 
 var chessApp = angular.module('chessApp', ['ngResource', 'ngRoute', 'ngSanitize', 'nywton.chessboard', 'nywton.chess']);
 
-chessApp.controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
+chessApp.controller('AppCtrl', ['$scope', '$location', '$rootScope', 'SessionService',
+    function ($scope, $location, $rootScope, SessionService) {
+        $rootScope.c = 15;
+        $scope.currentUser = function(){
+            return SessionService.getUser()
+        };
     window.isIIStep = false;
+    $rootScope.isAuthorized = false;
     }]);
 
 chessApp.config(['nywtonChessboardConfigProvider', function nywtonChessConfigConfig(chessboardProvider) {

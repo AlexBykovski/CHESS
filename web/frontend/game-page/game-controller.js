@@ -1,50 +1,45 @@
 chessApp.controller('GameCtrl', ['$scope', '$log', '$window', '$rootScope', function ($scope, $log, $window,
                                                                                       $rootScope) {
-    $scope.messageChessArea = "";
+    $scope.messageChessAreaWhite = "";
+    $scope.messageChessAreaBlack = "";
 
     var parseNameFigureForTextarea = function(type){
         switch(type){
             case "wP":
-                return "white Pawn";
             case "bP":
-                return "black Pawn";
+                return "";
             case "wR":
-                return "white Rook";
             case "bR":
-                return "black Rook";
+                return "R ";
             case "wB":
-                return "white Bishop";
             case "bB":
-                return "black Bishop";
+                return "B ";
             case "wN":
-                return "white Knight";
             case "bN":
-                return "black Knight";
+                return "N ";
             case "wQ":
-                return "white Queen";
             case "bQ":
-                return "black Queen";
+                return "Q ";
             case "wK":
-                return "white King";
             case "bK":
-                return "black King";
+                return "K ";
         }
     };
 
     $window.chessMaps = [];
 
+    var i = 1;
     document.addEventListener('chessStep', function (e) {
-        $scope.messageChessArea += "Moved " +
-        parseNameFigureForTextarea($window.chessMaps[$window.chessMaps.length - 1].figure) +
-        " from " + $window.chessMaps[$window.chessMaps.length - 1].start + " to " +
-        $window.chessMaps[$window.chessMaps.length - 1].end + "\n";
+        $scope.messageChessAreaBlack = parseNameFigureForTextarea($window.chessMaps[$window.chessMaps.length - 1].figure) +
+        $window.chessMaps[$window.chessMaps.length - 1].start + " -> " +
+        $window.chessMaps[$window.chessMaps.length - 1].end + "\n" + $scope.messageChessAreaBlack;
     }, false);
 
     $rootScope.$on("done.chess", function() {
         window.isIIStep = true;
-        $scope.messageChessArea += "Moved " +
-        parseNameFigureForTextarea($window.chessMaps[$window.chessMaps.length - 1].figure) +
-        " from " + $window.chessMaps[$window.chessMaps.length - 1].start + " to " +
-        $window.chessMaps[$window.chessMaps.length - 1].end + "\n";
+        $scope.messageChessAreaWhite = i + ') ' + parseNameFigureForTextarea($window.chessMaps[$window.chessMaps.length - 1].figure) +
+        $window.chessMaps[$window.chessMaps.length - 1].start + " -> " +
+        $window.chessMaps[$window.chessMaps.length - 1].end + "\n" + $scope.messageChessAreaWhite;
+        i++;
     });
 }]);

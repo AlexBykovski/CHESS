@@ -37,6 +37,7 @@
             <script src="{{ asset('frontend/js/main.js') }}"></script>
             <script src="{{ asset('frontend/app.js') }}"></script>
             <script src="{{ asset('frontend/routing.js') }}"></script>
+            <script src="{{ asset('frontend/common/session-service.js') }}"></script>
             <script src="{{ asset('frontend/main-page/main-controller.js') }}"></script>
             <script src="{{ asset('frontend/game-page/game-controller.js') }}"></script>
             <script src="{{ asset('frontend/rules-page/rules-controller.js') }}"></script>
@@ -46,7 +47,7 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body ng-controller="AppCtrl">
+    <body>
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -32,6 +32,7 @@ class ApiController extends Controller
         $user->setNickName($userData['nickName']);
         $user->setPassword($userData['password']);
         $user->setEmail($userData['email']);
+        $user->setElo($userData['elo']);
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($user);
@@ -63,7 +64,8 @@ class ApiController extends Controller
                 'lastName' => $user->getLastName(),
                 'nickName' => $user->getNickName(),
                 'password' => $user->getPassword(),
-                'email' => $user->getEmail()
+                'email' => $user->getEmail(),
+                'elo' => $user->getElo()
             );
         }, $users);
     }

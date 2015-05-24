@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+    <div ng-controller="AppCtrl">
     <div id="front">
         <div class="site-header">
             <div class="container">
@@ -20,8 +21,10 @@
                                 <li><a href="/homepage">Home</a></li>
                                 <li><a href="/game">Game</a></li>
                                 <li><a href="/rules">Rules</a></li>
-                                <li><a href="/register">Register</a></li>
-                                <li><a href="/login">Login</a></li>
+                                <li ng-hide="$root.isAuthorized"><a href="/register">Register</a></li>
+                                <li ng-hide="$root.isAuthorized"><a href="/login">Login</a></li>
+                                <li ng-show="$root.isAuthorized"><div style="  color: greenyellow; font-size: 20px;"
+                                                                      ng-bind="currentUser().nickName + ' | ' + currentUser().elo"><div></li>
                             </ul>
                         </div> <!-- /.main-menu -->
                     </div> <!-- /.col-md-8 -->
@@ -72,4 +75,5 @@
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
+        </div>
 {% endblock %}
